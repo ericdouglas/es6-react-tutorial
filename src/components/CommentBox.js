@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './index.css';
 
-import CommentList from '../CommentList';
-import CommentForm from '../CommentForm';
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
 
 class CommentBox extends Component {
   render() {
@@ -10,7 +9,7 @@ class CommentBox extends Component {
       <div className="comment-box">
         <h1>Comments</h1>
 
-        <CommentList />
+        <CommentList data={ this.props.data } />
         <CommentForm />
       </div>
     );
