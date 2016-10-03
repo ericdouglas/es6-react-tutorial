@@ -6,6 +6,9 @@
     "react-scripts": "0.6.1"
   },
   "dependencies": {
+    "axios": "^0.14.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "remarkable": "^1.7.0"
