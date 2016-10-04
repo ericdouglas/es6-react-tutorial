@@ -29,9 +29,14 @@ class CommentBox extends Component {
   }
 
   handleCommentSubmit(comment) {
-    // TODO: refresh the list
     // TODO: if can't save the comment in the server
     // save it in the browser
+    let comments = this.state.data;
+    comment.id = Date.now();
+    let newComments = comments.concat([comment]);
+
+    // Optimistic update
+    this.setState({ data: newComments });
 
     axios
       .post(this.props.url, comment)
@@ -39,6 +44,7 @@ class CommentBox extends Component {
         this.setState({ data: response.data })
       })
       .catch((error) => {
+        this.setState({ data: comments });
         console.error(this.props.url, error);
       });
   }
