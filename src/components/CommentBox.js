@@ -7,11 +7,12 @@ import CommentForm from './CommentForm';
 class CommentBox extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
 
     this.state = {
       data: []
     };
+
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
   }
 
   loadCommentsFromServer() {
@@ -23,7 +24,23 @@ class CommentBox extends Component {
         });
       })
       .catch((error) => {
-        console.error(this.props.url, error.toString());
+        console.error(this.props.url, error);
+      });
+  }
+
+  handleCommentSubmit(comment) {
+    // TODO: submit to the server
+    // TODO: refresh the list
+    // TODO: if can't save the comment in the server
+    // save it in the browser
+
+    axios
+      .post(this.props.url, comment)
+      .then((response) => {
+        this.setState({ data: response.data })
+      })
+      .catch((error) => {
+        console.error(this.props.url, error);
       });
   }
 
@@ -38,7 +55,7 @@ class CommentBox extends Component {
         <h1>Comments</h1>
 
         <CommentList data={ this.state.data } />
-        <CommentForm />
+        <CommentForm onCommentSubmit={ this.handleCommentSubmit } />
       </div>
     );
   }
