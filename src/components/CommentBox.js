@@ -29,8 +29,6 @@ class CommentBox extends Component {
   }
 
   handleCommentSubmit(comment) {
-    // TODO: if can't save the comment in the server
-    // save it in the browser
     let comments = this.state.data;
     comment.id = Date.now();
     let newComments = comments.concat([comment]);
