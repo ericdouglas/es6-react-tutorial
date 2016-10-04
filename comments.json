@@ -13,5 +13,10 @@
         "id": "3",
         "author": "Eric Douglas",
         "text": "_More_ one **comment**"
+    },
+    {
+        "id": 1475594721111,
+        "author": "Axios",
+        "text": "`POST` from **Axios**"
     }
 ]

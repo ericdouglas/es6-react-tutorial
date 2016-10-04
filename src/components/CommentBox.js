@@ -29,7 +29,6 @@ class CommentBox extends Component {
   }
 
   handleCommentSubmit(comment) {
-    // TODO: submit to the server
     // TODO: refresh the list
     // TODO: if can't save the comment in the server
     // save it in the browser
