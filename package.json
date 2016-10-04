@@ -14,7 +14,7 @@
     "remarkable": "^1.7.0"
   },
   "scripts": {
-    "start": "react-scripts start && node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
